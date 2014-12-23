@@ -1,4 +1,4 @@
-rdr on $int_if proto tcp from $int_if:network to any -> 127.0.0.1 port 9040
-rdr on $int_if proto udp from $int_if:network to 127.0.0.1 port 53 -> 127.0.0.1 port 54
+rdr on $int_if inet proto tcp from $int_if:network to any -> lo0 port 9040
+rdr on $int_if inet proto udp from $int_if:network to lo0 port 53 -> lo0 port 54
 
 pass quick on lo0 all
